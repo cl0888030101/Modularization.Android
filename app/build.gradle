@@ -125,7 +125,7 @@ dependencies {
     implementation "androidx.camera:camera-view:1.0.0-alpha31"
 
     implementation project(':EnterpriseDataModule')
-
+    implementation project(':AuthenticationFeature')
 }
 
 // Allow references to generated code

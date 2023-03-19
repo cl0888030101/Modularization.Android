@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "EyeQueConnect"
 include ':app'
 include ':EnterpriseDataModule'
+include ':AuthenticationFeature'

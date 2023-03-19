@@ -12,8 +12,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.eyeque.basecomponents.ui.FragmentHelper
+import com.eyeque.eyequeconnect.R
 import com.eyeque.eyequeconnect.databinding.FragmentPatientListBinding
 import com.eyeque.eyequeconnect.viewmodel.PatientListViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -76,7 +78,11 @@ class PatientListFragment : Fragment(), FragmentHelper {
 
     }
 
-    override fun setupClickListeners() {}
+    override fun setupClickListeners() {
+        binding.nextBtn.setOnClickListener {
+        }
+
+    }
 
 
 }
