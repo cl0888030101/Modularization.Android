@@ -1,5 +1,7 @@
 package com.eyeque.eyequeconnect.viewmodel
 
+import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.*
 import com.eyeque.enterprisedatamodule.APIResult
 import com.eyeque.enterprisedatamodule.model.request.Credential
@@ -8,7 +10,9 @@ import com.eyeque.enterprisedatamodule.repository.EnterpriseDataRepository
 import com.eyeque.eyequeconnect.utils.Constants
 import com.eyeque.reactiveprogramming.ReactiveDataRepository
 import com.eyeque.reactiveprogramming.ResponseData
+import com.eyeque.service.TaskService
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -18,7 +22,7 @@ import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val enterpriseDataRepository: EnterpriseDataRepository, private val reactiveDataRepository: ReactiveDataRepository) : ViewModel() {
+class LoginViewModel @Inject constructor(@ApplicationContext val context: Context, private val enterpriseDataRepository: EnterpriseDataRepository, private val reactiveDataRepository: ReactiveDataRepository) : ViewModel() {
     companion object{
         const val TAG = "LoginViewModel"
     }
@@ -145,4 +149,12 @@ class LoginViewModel @Inject constructor(private val enterpriseDataRepository: E
         delay(1000)
         return "test2 job completed"
     }
+
+    fun startTaskService(){
+        context.startService(Intent(context, TaskService::class.java).also {
+            it.putExtra("key1", "value1")
+        })
+    }
+
+
 }
