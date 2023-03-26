@@ -1,0 +1,3 @@
+[submodule "PatientFeature"]
+	path = PatientFeature
+	url = git@github.com:cl0888030101/PatientFeature.git

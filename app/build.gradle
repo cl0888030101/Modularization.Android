@@ -126,6 +126,7 @@ dependencies {
 
     implementation project(':EnterpriseDataModule')
     implementation project(':AuthenticationFeature')
+    implementation project(':PatientFeature')
 }
 
 // Allow references to generated code
